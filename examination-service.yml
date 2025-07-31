@@ -1,3 +1,6 @@
+server:
+  port: 8082
+
 spring:
   application:
     name: examination-service
@@ -6,27 +9,17 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/examinationdb
 
-  main:
-    allow-bean-definition-overriding: true
-
-  mvc:
-    pathmatch:
-      matching-strategy: ANT_PATH_MATCHER
-
-server:
-  port: 8082
-
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    prefer-ip-address: true
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
 
 logging:
   level:
     root: INFO
-    com.example.examinationservice: DEBUG
+    com.example: DEBUG
 
 management:
   endpoints:
@@ -37,17 +30,15 @@ management:
     health:
       show-details: always
 
-custom:
-  messages:
-    exam:
-      not-found: "Exam not found with id: "
-      created: "Exam created successfully."
-      updated: "Exam updated successfully."
-      deleted: "Exam deleted successfully."
-
 springdoc:
+  api-docs:
+    enabled: true
   swagger-ui:
     path: /swagger-ui.html
-    operationsSorter: method
-  api-docs:
-    path: /v3/api-docs
+    enabled: true
+
+custom:
+  messages:
+    notFound: "No record found"
+    success: "Operation successful"
+    error: "An error occurred"
