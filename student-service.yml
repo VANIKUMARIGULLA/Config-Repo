@@ -56,6 +56,22 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     eviction-interval-timer-in-ms: 10000
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      examService: 
+        registerHealthIndicator: true
+        slidingWindowSize: 3
+        minimumNumberOfCalls: 3
+        failureRateThreshold: 50
+        waitDurationInOpenState: 5s
+
+  retry:
+    instances:
+      productService:
+        max-attempts: 2
+        wait-duration: 1s
     
 
 management:
