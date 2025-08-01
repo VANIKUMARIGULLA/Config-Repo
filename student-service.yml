@@ -60,18 +60,26 @@ eureka:
 resilience4j:
   circuitbreaker:
     instances:
-      examService: 
+      examService:
         registerHealthIndicator: true
         slidingWindowSize: 3
         minimumNumberOfCalls: 3
+        permittedNumberOfCallsInHalfOpenState: 3
         failureRateThreshold: 50
-        waitDurationInOpenState: 5s
+        waitDurationInOpenState: 10s
+        automaticTransitionFromOpenToHalfOpenEnabled: true
 
   retry:
     instances:
-      productService:
-        max-attempts: 2
-        wait-duration: 1s
+      examService:
+        maxRetryAttempts: 2
+        waitDuration: 2s
+        retryExceptions:
+          - org.springframework.web.client.ResourceAccessException
+          - java.io.IOException
+        ignoreExceptions:
+          - com.example.student.service.exception.BadRequestException
+
 
 
 
