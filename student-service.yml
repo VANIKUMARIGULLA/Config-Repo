@@ -61,21 +61,21 @@ resilience4j:
   retry:
     instances:
       studentRetry:
-        max-attempts: 2                # total 2 attempts (1 original + 1 retry)
-        wait-duration: 1s              # wait between retry attempts
+        max-attempts: 2                # 1 original + 1 retry = 2 attempts total
+        wait-duration: 1s              # wait 1 second before retry
         retry-exceptions:
           - java.lang.Exception        # retry only on general exceptions
         ignore-exceptions:
-          - com.example.student.service.exception.StudentNotFoundException
+          - com.example.student.service.exception.StudentNotFoundException  # don't retry on custom exception
 
   circuitbreaker:
     instances:
       studentCB:
-        failure-rate-threshold: 50                             # open if 50% of requests fail
-        minimum-number-of-calls: 3                             # CB activates after at least 2 calls
-        sliding-window-size: 3                                 # consider 4 latest calls for failure rate
+        failure-rate-threshold: 50                             # open CB if 50% failures in the window
+        minimum-number-of-calls: 3                             # start evaluating after 3 calls
+        sliding-window-size: 3                                 # evaluate failure rate from last 3 calls
         wait-duration-in-open-state: 10s                       # stay OPEN for 10 seconds
-        permitted-number-of-calls-in-half-open-state: 1        # test with 1 call before closing
+        permitted-number-of-calls-in-half-open-state: 1        # allow 1 call in HALF-OPEN before deciding
         automatic-transition-from-open-to-half-open-enabled: true
 
 
