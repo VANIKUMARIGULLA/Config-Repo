@@ -57,29 +57,6 @@ eureka:
     fetch-registry: true
     eviction-interval-timer-in-ms: 10000
     
-resilience4j:
-  circuitbreaker:
-    instances:
-      examService:
-        registerHealthIndicator: true
-        slidingWindowType: COUNT_BASED   # 👈 Important for testability
-        slidingWindowSize: 3
-        minimumNumberOfCalls: 3
-        failureRateThreshold: 50
-        waitDurationInOpenState: 5s
-        permittedNumberOfCallsInHalfOpenState: 1
-        automaticTransitionFromOpenToHalfOpenEnabled: true
-
-  retry:
-    instances:
-      examService:
-        max-attempts: 2        # 1 initial call + 1 retry
-        wait-duration: 1s
-
-logging:
-  level:
-    io.github.resilience4j: DEBUG   # 👈 Show detailed logs
-
 
 management:
   endpoints:
