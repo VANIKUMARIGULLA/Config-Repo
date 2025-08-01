@@ -56,27 +56,23 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     eviction-interval-timer-in-ms: 10000
-
+    
 resilience4j:
-  retry:
-    instances:
-      studentRetry:
-        max-attempts: 2                # 1 original + 1 retry = 2 attempts total
-        wait-duration: 1s              # wait 1 second before retry
-        retry-exceptions:
-          - java.lang.Exception        # retry only on general exceptions
-        ignore-exceptions:
-          - com.example.student.service.exception.StudentNotFoundException  # don't retry on custom exception
-
   circuitbreaker:
     instances:
-      studentCB:
-        failure-rate-threshold: 50                             # open CB if 50% failures in the window
-        minimum-number-of-calls: 3                             # start evaluating after 3 calls
-        sliding-window-size: 3                                 # evaluate failure rate from last 3 calls
-        wait-duration-in-open-state: 10s                       # stay OPEN for 10 seconds
-        permitted-number-of-calls-in-half-open-state: 1        # allow 1 call in HALF-OPEN before deciding
+      studentServiceCB:
+        failure-rate-threshold: 50
+        minimum-number-of-calls: 3
+        sliding-window-size: 3
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 1
         automatic-transition-from-open-to-half-open-enabled: true
+  retry:
+    instances:
+      studentServiceCB:
+        max-attempts: 2
+        wait-duration: 1s
+
 
 
 management:
