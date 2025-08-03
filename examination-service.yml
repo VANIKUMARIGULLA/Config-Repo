@@ -12,8 +12,9 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: vanikumari.gulla2@gmail.com   # Your Gmail ID
-    password: sbdroggzjfompwkp              # App password
+    username: vanikumari.gulla2@gmail.com
+    password: sbdroggzjfompwkp
+    protocol: smtp
     properties:
       mail:
         smtp:
@@ -29,9 +30,15 @@ eureka:
     register-with-eureka: true
     eviction-interval-timer-in-ms: 10000
 
-mail:
-  from: vanikumari.gulla2@gmail.com
-  to: junnu3714@gmail.com
+custom:
+  mail:
+    from: vanikumari.gulla2@gmail.com
+    to: junnu3714@gmail.com
+
+  messages:
+    notFound: "No record found"
+    success: "Operation successful"
+    error: "An error occurred"
 
 logging:
   level:
@@ -53,9 +60,3 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
-
-custom:
-  messages:
-    notFound: "No record found"
-    success: "Operation successful"
-    error: "An error occurred"
