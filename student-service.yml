@@ -69,7 +69,7 @@ resilience4j:
 
   retry:
     instances:
-      productService:
+      examService:
         max-attempts: 2
         wait-duration: 1s
     
@@ -94,3 +94,4 @@ logging:
   level:
     root: INFO
     com.example: DEBUG
+
