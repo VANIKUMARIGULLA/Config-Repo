@@ -21,14 +21,19 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: vanikumari.gulla2@gmail.com
-    password: sbdroggzjfompwkp
+    username: vanikumari.gulla2@gmail.com   # Your Gmail ID
+    password: sbdroggzjfompwkp              # App password (not your Gmail login password)
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
+
+mail:
+  from: vanikumari.gulla2@gmail.com
+  to: junnu3714@gmail.com
+
 
 
 logging:
@@ -57,4 +62,5 @@ custom:
     notFound: "No record found"
     success: "Operation successful"
     error: "An error occurred"
+
 
