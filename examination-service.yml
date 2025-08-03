@@ -9,6 +9,18 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/exam_schedules
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: vanikumari.gulla2@gmail.com   # Your Gmail ID
+    password: sbdroggzjfompwkp              # App password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 eureka:
   client:
     service-url:
@@ -17,24 +29,9 @@ eureka:
     register-with-eureka: true
     eviction-interval-timer-in-ms: 10000
 
-spring:
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: vanikumari.gulla2@gmail.com   # Your Gmail ID
-    password: sbdroggzjfompwkp              # App password (not your Gmail login password)
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-
 mail:
   from: vanikumari.gulla2@gmail.com
   to: junnu3714@gmail.com
-
-
 
 logging:
   level:
@@ -62,5 +59,3 @@ custom:
     notFound: "No record found"
     success: "Operation successful"
     error: "An error occurred"
-
-
