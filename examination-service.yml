@@ -5,6 +5,9 @@ spring:
   application:
     name: examination-service
 
+config:
+    import: optional:configserver:http://localhost:8888
+
   data:
     mongodb:
       uri: mongodb://localhost:27017/exam_schedules
@@ -60,3 +63,4 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
+
