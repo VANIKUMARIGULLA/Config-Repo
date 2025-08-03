@@ -17,6 +17,20 @@ eureka:
     register-with-eureka: true
     eviction-interval-timer-in-ms: 10000
 
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: vanikumari.gulla2@gmail.com
+    password: sbdroggzjfompwkp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
 logging:
   level:
     root: INFO
@@ -43,3 +57,4 @@ custom:
     notFound: "No record found"
     success: "Operation successful"
     error: "An error occurred"
+
