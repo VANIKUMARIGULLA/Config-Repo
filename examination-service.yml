@@ -5,25 +5,9 @@ spring:
   application:
     name: examination-service
 
-config:
-    import: optional:configserver:http://localhost:8888
-
   data:
     mongodb:
       uri: mongodb://localhost:27017/exam_schedules
-
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: vanikumari.gulla2@gmail.com
-    password: sbdroggzjfompwkp
-    protocol: smtp
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
 
 eureka:
   client:
@@ -32,11 +16,6 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     eviction-interval-timer-in-ms: 10000
-
-custom:
-  mail:
-    from: vanikumari.gulla2@gmail.com
-    to: junnu3714@gmail.com
 
   messages:
     notFound: "No record found"
@@ -63,4 +42,5 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
+
 
