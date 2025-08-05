@@ -82,6 +82,11 @@ student:
     patchSuccess: "Student partially updated successfully"
     deleteSuccess: "Student deleted successfully"
 
+email:
+  messages:
+    simple-success: Simple email sent
+    attachment-success: Email with attachment sent
+    template-success: Template email sent
 
     
 
@@ -105,6 +110,7 @@ logging:
   level:
     root: INFO
     com.example: DEBUG
+
 
 
 
