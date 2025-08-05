@@ -82,16 +82,15 @@ messages:
     patchSuccess: "Student partially updated successfully"
     deleteSuccess: "Student deleted successfully"
 
-messages:
   email:
-    simple-success: Simple email sent
-    attachment-success: Email with attachment sent
-    template-success: Template email sent
+    simpleSuccess: "Simple email sent"
+    attachmentSuccess: "Email with attachment sent"
+    templateSuccess: "Template email sent"
 
-messages:
   kafka:
     pointToPointSuccess: "Message sent to topic '%s' (Point-to-Point)"
     publishSuccess: "Message published to topic '%s' (Publish-Subscribe)"
+
 
 
 management:
@@ -114,6 +113,7 @@ logging:
   level:
     root: INFO
     com.example: DEBUG
+
 
 
 
