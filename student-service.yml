@@ -88,7 +88,11 @@ email:
     attachment-success: Email with attachment sent
     template-success: Template email sent
 
-    
+messages:
+  kafka:
+    pointToPointSuccess: "Message sent to topic '%s' (Point-to-Point)"
+    publishSuccess: "Message published to topic '%s' (Publish-Subscribe)"
+
 
 management:
   endpoints:
@@ -110,6 +114,7 @@ logging:
   level:
     root: INFO
     com.example: DEBUG
+
 
 
 
