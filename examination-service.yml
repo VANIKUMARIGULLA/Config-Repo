@@ -17,6 +17,16 @@ eureka:
     register-with-eureka: true
     eviction-interval-timer-in-ms: 10000
 
+messages:
+  examination:
+    created: "Examination created successfully"
+    fetchedAll: "Fetched all examinations successfully"
+    fetchedById: "Fetched examination by ID successfully"
+    updated: "Examination updated successfully"
+    patched: "Examination patched successfully"
+    deleted: "Examination deleted successfully"
+
+
   messages:
     notFound: "No record found"
     success: "Operation successful"
@@ -42,6 +52,7 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
+
 
 
 
