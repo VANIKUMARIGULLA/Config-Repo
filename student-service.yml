@@ -75,12 +75,13 @@ resilience4j:
 
 student:
   messages:
-    create-success: Student created successfully
-    fetch-all-success: All student records fetched
-    fetch-by-id-success: Student fetched successfully
-    update-success: Student updated successfully
-    patch-success: Student patched successfully
-    delete-success: Student deleted successfully
+    createSuccess: "Student created successfully"
+    fetchAllSuccess: "All students fetched successfully"
+    fetchByIdSuccess: "Student fetched by ID"
+    updateSuccess: "Student updated successfully"
+    patchSuccess: "Student partially updated successfully"
+    deleteSuccess: "Student deleted successfully"
+
 
     
 
@@ -104,6 +105,7 @@ logging:
   level:
     root: INFO
     com.example: DEBUG
+
 
 
 
