@@ -72,6 +72,16 @@ resilience4j:
       examService:
         max-attempts: 2
         wait-duration: 1s
+
+student:
+  messages:
+    create-success: Student created successfully
+    fetch-all-success: All student records fetched
+    fetch-by-id-success: Student fetched successfully
+    update-success: Student updated successfully
+    patch-success: Student patched successfully
+    delete-success: Student deleted successfully
+
     
 
 management:
@@ -94,6 +104,7 @@ logging:
   level:
     root: INFO
     com.example: DEBUG
+
 
 
 
