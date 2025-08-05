@@ -73,8 +73,8 @@ resilience4j:
         max-attempts: 2
         wait-duration: 1s
 
-student:
-  messages:
+messages:
+  student:
     createSuccess: "Student created successfully"
     fetchAllSuccess: "All students fetched successfully"
     fetchByIdSuccess: "Student fetched by ID"
@@ -82,8 +82,8 @@ student:
     patchSuccess: "Student partially updated successfully"
     deleteSuccess: "Student deleted successfully"
 
-email:
-  messages:
+messages:
+  email:
     simple-success: Simple email sent
     attachment-success: Email with attachment sent
     template-success: Template email sent
@@ -114,6 +114,7 @@ logging:
   level:
     root: INFO
     com.example: DEBUG
+
 
 
 
