@@ -74,7 +74,7 @@ resilience4j:
         wait-duration: 1s
 
 messages:
-  student:
+  studentMessagesProperties:
     createSuccess: "Student created successfully"
     fetchAllSuccess: "All students fetched successfully"
     fetchByIdSuccess: "Student fetched by ID"
@@ -113,6 +113,7 @@ logging:
   level:
     root: INFO
     com.example: DEBUG
+
 
 
 
