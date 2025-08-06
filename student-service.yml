@@ -87,7 +87,7 @@ messages:
     attachmentSuccess: "Email with attachment sent"
     templateSuccess: "Template email sent"
 
-  kafka:
+  kafkaMessageProperties:
     pointToPointSuccess: "Message sent to topic '%s' (Point-to-Point)"
     publishSuccess: "Message published to topic '%s' (Publish-Subscribe)"
 
@@ -113,6 +113,7 @@ logging:
   level:
     root: INFO
     com.example: DEBUG
+
 
 
 
